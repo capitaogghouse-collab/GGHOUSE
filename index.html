@@ -13,7 +13,7 @@
     }
     h2 {
       text-align: center;
-      color: #ffcc00;
+      color: #ffffff; /* branco clean */
     }
     ul {
       list-style: none;
@@ -23,6 +23,15 @@
     ul li {
       margin: 8px 0;
       font-size: 16px;
+      color: #ffffff; /* branco */
+    }
+    ul li a {
+      color: #ffffff; /* branco padrão */
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    ul li a:hover {
+      color: #25D366; /* verde quando passa o mouse */
     }
     form {
       max-width: 400px;
@@ -37,7 +46,7 @@
       border: none;
       font-size: 16px;
     }
-    a.btn, button {
+    button {
       display: block;
       width: 250px;
       margin: 30px auto;
@@ -48,11 +57,10 @@
       border-radius: 8px;
       font-size: 18px;
       font-weight: bold;
-      text-decoration: none;
-      transition: background 0.3s ease;
       cursor: pointer;
+      transition: background 0.3s ease;
     }
-    a.btn:hover, button:hover {
+    button:hover {
       background: #1da851;
     }
     footer {
@@ -65,9 +73,9 @@
 </head>
 <body>
 
-  <!-- Logo GGHOUSE no topo -->
+  <!-- Logo GGHOUSE maior no topo -->
   <img src="LOGOGG.png" alt="Logo GGHOUSE"
-       style="width:300px; display:block; margin:20px auto;">
+       style="width:400px; display:block; margin:30px auto;">
 
   <h2>Torneio Atual: GENESIS TFT CUP S1</h2>
   <ul>
@@ -77,9 +85,9 @@
     <li>🏆 Premiação: (a definir)</li>
   </ul>
 
-  <!-- Imagem do TFT acima da inscrição -->
+  <!-- Imagem do TFT menor -->
   <img src="TFT.jfif" alt="Teamfight Tactics"
-       style="max-width:800px; display:block; margin:20px auto; border-radius:10px;">
+       style="max-width:600px; display:block; margin:20px auto; border-radius:10px;">
 
   <h2>Inscrição no Torneio</h2>
 
@@ -102,15 +110,16 @@
   </form>
 
   <h2>Sobre a GGHOUSE</h2>
-  <p style="text-align:center; max-width:600px; margin:0 auto;">
+  <p style="text-align:center; max-width:600px; margin:0 auto; color:#ffffff;">
     Comunidade gamer criada para organizar torneios, eventos e criar um ambiente competitivo e divertido para jogadores.
   </p>
 
   <h2>Contato</h2>
   <ul>
-    <li><a href="https://wa.me/55084988784455" target="_blank" style="color:#25D366;">WhatsApp</a></li>
-    <li><a href="https://www.instagram.com/capitaoggh/" target="_blank" style="color:#E1306C;">Instagram</a></li>
-    <li><a href="https://www.twitch.tv/capitaoggh" target="_blank" style="color:#6441A5;">Twitch</a></li>
+    <li><a href="https://wa.me/55084988784455" target="_blank">WhatsApp</a></li>
+    <li><a href="https://www.instagram.com/capitaoggh/" target="_blank">Instagram</a></li>
+    <li><a href="https://www.twitch.tv/capitaoggh" target="_blank">Twitch</a></li>
+    <li><a href="https://discord.gg/HN8NTPEYep" target="_blank">Discord</a></li>
   </ul>
 
   <footer>© 2024 GGHOUSE. Todos os direitos reservados.</footer>
