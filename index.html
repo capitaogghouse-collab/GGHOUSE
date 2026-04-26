@@ -11,96 +11,39 @@
       margin: 0;
       padding: 0;
     }
-    h2 {
-      text-align: center;
-      color: #ffcc00;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-      text-align: center;
-    }
-    ul li {
-      margin: 8px 0;
-      font-size: 16px;
-      color: #ffffff;
-    }
-    ul li a {
-      color: #ffffff;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    ul li a:hover {
-      color: #25D366;
-    }
-    .sobre {
-      max-width: 600px;
-      margin: 0 auto;
-      text-align: left;
-      color: #ffffff;
-      line-height: 1.6;
-    }
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      font-size: 14px;
-      color: #aaa;
-    }
+    h2 { text-align: center; color: #ffcc00; }
+    ul { list-style: none; padding: 0; text-align: center; }
+    ul li { margin: 8px 0; font-size: 16px; color: #ffffff; }
+    ul li a { color: #ffffff; text-decoration: none; transition: color 0.3s ease; }
+    ul li a:hover { color: #25D366; }
+    .sobre { max-width: 600px; margin: 0 auto; text-align: left; color: #ffffff; line-height: 1.6; }
+    footer { text-align: center; margin-top: 40px; font-size: 14px; color: #aaa; }
     .btn {
-      display: block;
-      width: 250px;
-      margin: 30px auto;
-      background: #25D366;
-      color: #fff;
-      padding: 15px;
-      text-align: center;
-      border-radius: 8px;
-      font-size: 18px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s ease;
+      display: block; width: 250px; margin: 30px auto;
+      background: #25D366; color: #fff; padding: 15px;
+      text-align: center; border-radius: 8px; font-size: 18px;
+      font-weight: bold; cursor: pointer; transition: background 0.3s ease;
       text-decoration: none;
     }
-    .btn:hover {
-      background: #1da851;
-    }
+    .btn:hover { background: #1da851; }
     form {
-      max-width: 600px;
-      margin: 0 auto;
-      background:#000;
-      padding:20px;
-      border-radius:10px;
-      border:2px solid #ffcc00;
-      color:#fff;
+      max-width: 600px; margin: 0 auto; background:#000;
+      padding:20px; border-radius:10px; border:2px solid #ffcc00; color:#fff;
     }
     form input, form select {
-      width:90%;
-      padding:10px;
-      margin:10px 0;
-      border-radius:6px;
-      border:none;
-      font-size:16px;
+      width:90%; padding:10px; margin:10px 0;
+      border-radius:6px; border:none; font-size:16px;
     }
     form button {
-      display:block;
-      width:250px;
-      margin:30px auto;
-      background:#25D366;
-      color:#fff;
-      padding:15px;
-      border-radius:8px;
-      font-size:18px;
-      font-weight:bold;
-      cursor:pointer;
+      display:block; width:250px; margin:30px auto;
+      background:#25D366; color:#fff; padding:15px;
+      border-radius:8px; font-size:18px; font-weight:bold; cursor:pointer;
     }
-    form button:hover {
-      background:#1da851;
-    }
+    form button:hover { background:#1da851; }
   </style>
 </head>
 <body>
 
-  <!-- Logo GGHOUSE -->
   <img src="LOGOGG.png" alt="Logo GGHOUSE"
        style="width:400px; display:block; margin:30px auto;">
 
@@ -112,7 +55,6 @@
     <li>🏆 Premiação: (a definir)</li>
   </ul>
 
-  <!-- Imagem do TFT -->
   <img src="TFT.jfif" alt="Teamfight Tactics"
        style="max-width:600px; display:block; margin:20px auto; border-radius:10px;">
 
@@ -134,7 +76,6 @@
     <button type="submit">CONFIRMAR PRESENÇA</button>
   </form>
 
-  <!-- Mensagem de confirmação -->
   <div id="mensagem" style="text-align:center; margin-top:20px; font-size:18px; color:#25D366;"></div>
 
   <h2>Sobre a GGHOUSE</h2>
@@ -153,15 +94,13 @@
 
   <footer>© 2026 GGHOUSE. Todos os direitos reservados.</footer>
 
-  <!-- Botão verde exclusivo para Dory -->
   <a href="amor.html" class="btn">ESSE BOTÃO É PRA VC DORY ❤️</a>
 
-  <!-- Firebase SDK -->
-  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+  <!-- Firebase SDK versão 8 -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 
   <script>
-    // Configuração do seu projeto Firebase
     const firebaseConfig = {
       apiKey: "AIzaSyBEUDPXigXGw5s-kbUkuy0uV_k7ikMU9Wo",
       authDomain: "gghouse-ffdea.firebaseapp.com",
@@ -172,11 +111,9 @@
       measurementId: "G-1K699WR52V"
     };
 
-    // Inicializa Firebase
-    const app = firebase.initializeApp(firebaseConfig);
+    firebase.initializeApp(firebaseConfig);
     const db = firebase.firestore();
 
-    // Captura o formulário
     const form = document.getElementById('formInscricao');
     const mensagem = document.getElementById('mensagem');
 
@@ -192,7 +129,7 @@
           data: new Date()
         });
         mensagem.textContent = "✅ Inscrição confirmada com sucesso!";
-        mensagem.style.color = "#25D366"; // verde
+        mensagem.style.color = "#25D366";
         form.reset();
       } catch (error) {
         console.error("Erro ao salvar inscrição: ", error);
