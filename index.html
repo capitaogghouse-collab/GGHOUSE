@@ -134,6 +134,9 @@
     <button type="submit">CONFIRMAR PRESENÇA</button>
   </form>
 
+  <!-- Mensagem de confirmação -->
+  <div id="mensagem" style="text-align:center; margin-top:20px; font-size:18px; color:#25D366;"></div>
+
   <h2>Sobre a GGHOUSE</h2>
   <p class="sobre">
     A GGHOUSE é uma comunidade gamer criada para organizar torneios, eventos e criar um ambiente competitivo e divertido para jogadores.  
@@ -175,6 +178,8 @@
 
     // Captura o formulário
     const form = document.getElementById('formInscricao');
+    const mensagem = document.getElementById('mensagem');
+
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const nick = document.getElementById('nick').value;
@@ -186,10 +191,13 @@
           elo: elo,
           data: new Date()
         });
-        alert("Inscrição registrada com sucesso!");
+        mensagem.textContent = "✅ Inscrição confirmada com sucesso!";
+        mensagem.style.color = "#25D366"; // verde
         form.reset();
       } catch (error) {
         console.error("Erro ao salvar inscrição: ", error);
+        mensagem.textContent = "❌ Ocorreu um erro, tente novamente.";
+        mensagem.style.color = "red";
       }
     });
   </script>
